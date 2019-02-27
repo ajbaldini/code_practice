@@ -8,21 +8,11 @@ def check_anagram(wordOne, wordTwo):
     one.sort()
     two.sort()
 
-    if len(one) != len(two):
-        return False
+    if one == two:
+        print(''.join(wordOne) + " and " + ''.join(wordTwo) + " are anagrams")
+    else:
+        print(''.join(wordOne) + " and " + ''.join(wordTwo) + " are not anagrams")
 
-    x=0
-    for i in one:
-        if i != two[x]:
-            return False
-        x=x+1
-    return True
+print(check_anagram('listen','silent'))
+print(check_anagram('listens', 'silent'))
 
-wordOne = 'listen'
-wordTwo = 'silent'
-
-isAna = check_anagram(wordOne,wordTwo)
-if isAna:
-    print(wordTwo + " and " + wordOne + " are anagrams")
-else:
-    print(wordTwo + " and " + wordOne + " are not anagrams")
